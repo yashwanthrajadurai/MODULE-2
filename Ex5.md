@@ -1,56 +1,69 @@
 # Ex.No:5
-# Ex.Name:Write a CPP Program to overload the Operator (++) i.e. on invoking it the incrementation should happen by some random value.
-## Date:
+# Ex.Name:Write a CPP Program to compute the total and percentage of a student by Function Overloading
+
 ## Aim:
-To write a CPP Program to overload the Operator (++) i.e. on invoking it the incrementation should happen by some random value.
+To write a CPP Program to compute the total and percentage of a student by Function Overloading
 
 ## Algorithm:
-1.Start the program.
+Start
 
-2.Define a class Rep with a data member value.
+Define a function compute(int m1, int m2, int m3)
 
-3.Define a constructor to initialize value.
+Add the three marks (m1 + m2 + m3).
 
-4.Overload the prefix ++ operator so that: i)A random number is generated. ii)That random number is added to value. iii)The new value is displayed.
+Return the total.
 
-5.In main(), initialize the random number generator using srand(time(0)).
+Define a function percentage(float avg)
 
-6.Take input for the initial value of the object.
+Divide the given value by 3 (avg / 3).
 
-7.Apply the overloaded operator ++, display the incremented result, and then end the program.
+Return the result.
+
+In the main() function:
+
+Declare integer variables mk1, mk2, mk3.
+
+Take input for the three marks.
+
+Call compute(mk1, mk2, mk3) to calculate the total and store it in tot.
+
+Print "Total=" followed by tot.
+
+Call percentage(tot) to calculate the percentage and store it in perc.
+
+Print "Percentage=" followed by perc.
+
+End
 
 
 
 
 ## Program:
 ```
-#include <iostream>
+#include<iostream>
 using namespace std;
-
-class rep {
-public:
-    int a, b, c;
-
-    void operator++() {
-        a = b + c;
-        cout << a;
-    }
-};
-
-int main() {
-    rep o;
-    cin >> o.b >> o.c;
-    ++o;
-    return 0;
+int compute(int m1, int m2, int m3){ 
+    int total = m1+m2+m3;  
+    return total;
+}
+float percentage(float avg){ 
+    avg = avg/3; 
+    return avg;
+}int main(){  
+    int mk1, mk2,mk3; 
+    cin>>mk1>>mk2>>mk3;  
+    float tot = compute(mk1, mk2, mk3);  
+    cout<<"Total="<<tot<<endl;     
+    float perc= percentage(tot);  
+    cout<<"Percentage="<<perc;
 }
 ```
 
-
 ## Output:
-<img width="1201" height="316" alt="image" src="https://github.com/user-attachments/assets/01554cdc-e753-49e6-81fd-d6fe8a89d073" />
+<img width="1357" height="215" alt="image" src="https://github.com/user-attachments/assets/71362a75-8266-4310-a5ab-2a2c71319d46" />
 
 
 
 ## Result:
-Hence the program is executed successfully.
+Hence the program executed successfully.
 
